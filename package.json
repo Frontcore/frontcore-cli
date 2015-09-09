@@ -2,9 +2,9 @@
   "name": "frontcore-cli",
   "version": "0.0.0",
   "description": "A CLI for frontcore project",
-  "main": "./bin/frontcore.js",
+  "main": "./lib/index.js",
   "bin": {
-    "frontcore": "./bin/frontcore-cli.js"
+    "frontcore": "./bin/frontcore"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/hegdeashwin/frontcore-cli/issues"
   },
-  "homepage": "https://github.com/hegdeashwin/frontcore-cli#readme"
+  "homepage": "https://github.com/hegdeashwin/frontcore-cli#readme",
+  "dependencies": {
+    "inquirer": "^0.9.0"
+  }
 }
