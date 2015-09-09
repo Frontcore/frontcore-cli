@@ -1,0 +1,26 @@
+{
+  "name": "frontcore-cli",
+  "version": "0.0.0",
+  "description": "A CLI for frontcore project",
+  "main": "./lib/index.js",
+  "bin": {
+    "frontcore": "./bin/frontcore"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hegdeashwin/frontcore-cli.git"
+  },
+  "keywords": [
+    "frontcore",
+    "cli"
+  ],
+  "author": "Ashwin Hegde",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hegdeashwin/frontcore-cli/issues"
+  },
+  "homepage": "https://github.com/hegdeashwin/frontcore-cli#readme",
+  "dependencies": {
+    "inquirer": "^0.9.0"
+  }
+}

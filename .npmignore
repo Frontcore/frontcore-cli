@@ -1,0 +1,10 @@
+# List of filetypes
+*.swp
+.*.swp
+*.yml
+*.log
+
+# List of directories
+/node_modules
+/test
+/release
