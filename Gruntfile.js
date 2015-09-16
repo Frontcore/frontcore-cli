@@ -46,6 +46,20 @@
 					'Gruntfile.js',
 					'lib/**/*.js'
 				]
+			},
+
+			/**
+			 * Run clean before generating files
+			 */
+			clean: {
+				test: ['tmp']
+			},
+
+			/**
+			 * Run unit tests
+			 */
+			nodeunit: {
+				tests: ['test/**/*_test.js']
 			}
 		});
 
@@ -55,16 +69,22 @@
 		grunt.loadNpmTasks('grunt-contrib-jshint');
 		grunt.loadNpmTasks('grunt-jscs');
 		grunt.loadNpmTasks('grunt-jsonlint');
+		grunt.loadNpmTasks('grunt-contrib-clean');
+		grunt.loadNpmTasks('grunt-contrib-nodeunit');
 
 		/**
 		 * Set `default` task
 		 */
-		grunt.registerTask('default', ['jsonlint', 'jshint', 'jscs']);
+		grunt.registerTask('default', ['jsonlint', 'jshint', 'jscs', 'clean', 'nodeunit']);
 
 		/**
 		 * Set `lint` task
 		 */
 		grunt.registerTask('lintjs', ['jsonlint', 'jshint', 'jscs']);
 
+		/**
+		 * Set `test` task
+		 */
+		grunt.registerTask('test', ['clean', 'nodeunit']);
 	};
 })();
