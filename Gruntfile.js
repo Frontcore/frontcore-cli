@@ -77,12 +77,12 @@
 		/**
 		 * Set `default` task
 		 */
-		grunt.registerTask('default', ['jsonlint', 'jshint', 'jscs', 'travislint', 'nodeunit']);
+		grunt.registerTask('default', ['jsonlint', 'jshint', 'jscs', 'nodeunit']);
 
 		/**
-		 * Set `lint` task
+		 * Set `lint` task for JavaScript based files
 		 */
-		grunt.registerTask('lintjs', ['jsonlint', 'jshint', 'jscs', 'travislint']);
+		grunt.registerTask('lintjs', ['jsonlint', 'jshint', 'jscs']);
 
 		/**
 		 * Set `lintbuild` task
