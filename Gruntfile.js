@@ -18,14 +18,14 @@
 			/**
 			 * Run jsonlint on JavaScript files
 			 */
-			jsonlint: {
+			'jsonlint': {
 				files: '*.json'
 			},
 
 			/**
 			 * Run Jshint on JavaScript files
 			 */
-			jshint: {
+			'jshint': {
 				all: [
 					'Gruntfile.js',
 					'lib/**/*.js',
@@ -39,7 +39,7 @@
 			/**
 			 * Run JSCS check on JavaScript files
 			 */
-			jscs: {
+			'jscs': {
 				options: {
 					config: '.jscsrc'
 				},
@@ -48,6 +48,13 @@
 					'lib/**/*.js',
 					'test/**/*.js'
 				]
+			},
+
+			/**
+			 * Run lint on .travis.yml
+			 */
+			'travis-lint': {
+				files: '.travis.yml'
 			},
 
 			/**
@@ -65,16 +72,22 @@
 		grunt.loadNpmTasks('grunt-jscs');
 		grunt.loadNpmTasks('grunt-jsonlint');
 		grunt.loadNpmTasks('grunt-contrib-nodeunit');
+		grunt.loadNpmTasks('grunt-travis-lint');
 
 		/**
 		 * Set `default` task
 		 */
-		grunt.registerTask('default', ['jsonlint', 'jshint', 'jscs', 'nodeunit']);
+		grunt.registerTask('default', ['jsonlint', 'jshint', 'jscs', 'travislint', 'nodeunit']);
 
 		/**
 		 * Set `lint` task
 		 */
-		grunt.registerTask('lintjs', ['jsonlint', 'jshint', 'jscs']);
+		grunt.registerTask('lintjs', ['jsonlint', 'jshint', 'jscs', 'travislint']);
+
+		/**
+		 * Set `lintbuild` task
+		 */
+		grunt.registerTask('lintbuild', ['travis-lint']);
 
 		/**
 		 * Set `test` task
