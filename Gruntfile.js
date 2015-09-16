@@ -28,7 +28,8 @@
 			jshint: {
 				all: [
 					'Gruntfile.js',
-					'lib/**/*.js'
+					'lib/**/*.js',
+					'test/**/*.js'
 				],
 				options: {
 					jshintrc: '.jshintrc'
@@ -44,22 +45,16 @@
 				},
 				src: [
 					'Gruntfile.js',
-					'lib/**/*.js'
+					'lib/**/*.js',
+					'test/**/*.js'
 				]
-			},
-
-			/**
-			 * Run clean before generating files
-			 */
-			clean: {
-				test: ['tmp']
 			},
 
 			/**
 			 * Run unit tests
 			 */
 			nodeunit: {
-				tests: ['test/**/*_test.js']
+				tests: ['test/test-*.js']
 			}
 		});
 
@@ -69,13 +64,12 @@
 		grunt.loadNpmTasks('grunt-contrib-jshint');
 		grunt.loadNpmTasks('grunt-jscs');
 		grunt.loadNpmTasks('grunt-jsonlint');
-		grunt.loadNpmTasks('grunt-contrib-clean');
 		grunt.loadNpmTasks('grunt-contrib-nodeunit');
 
 		/**
 		 * Set `default` task
 		 */
-		grunt.registerTask('default', ['jsonlint', 'jshint', 'jscs', 'clean', 'nodeunit']);
+		grunt.registerTask('default', ['jsonlint', 'jshint', 'jscs', 'nodeunit']);
 
 		/**
 		 * Set `lint` task
@@ -85,6 +79,6 @@
 		/**
 		 * Set `test` task
 		 */
-		grunt.registerTask('test', ['clean', 'nodeunit']);
+		grunt.registerTask('test', ['nodeunit']);
 	};
 })();
