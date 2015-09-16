@@ -8,7 +8,7 @@
 	var fsops = require('../lib/fsops.js');
 
 	/**
-	 * Expected JSON objects to hold data that are provided to source to generated datafiles;
+	 * Expected JSON objects;
 	 */
 	var config_projectname = require('./expected/projectname.json'),
 		config_language = require('./expected/language.json'),
