@@ -1,0 +1,26 @@
+{
+	"projectname": "frontcore-cli",
+	"version": "0.0.1",
+	"languages": [
+		"HTML",
+		"CSS",
+		"JavaScript"
+	],
+	"directory": {
+		"html": {
+			"files": [],
+			"ignore": [],
+			"options": {}
+		},
+		"css": {
+			"files": [],
+			"ignore": [],
+			"options": {}
+		},
+		"js": {
+			"files": [],
+			"ignore": [],
+			"options": {}
+		}
+	}
+}
