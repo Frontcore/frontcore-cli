@@ -1,6 +1,6 @@
 {
   "name": "frontcore-cli",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A CLI for frontcore project",
   "parent": {
     "product": "frontcore",
