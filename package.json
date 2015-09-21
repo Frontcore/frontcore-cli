@@ -2,6 +2,10 @@
   "name": "frontcore-cli",
   "version": "0.0.6",
   "description": "A CLI for frontcore project",
+  "parent": {
+    "product": "frontcore",
+    "version": "0.0.0"
+  },
   "main": "./lib/index.js",
   "bin": {
     "frontcore": "./bin/frontcore"
