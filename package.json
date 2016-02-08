@@ -1,6 +1,6 @@
 {
   "name": "frontcore-cli",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A CLI for frontcore project",
   "parent": {
     "product": "frontcore",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hegdeashwin/frontcore-cli.git"
+    "url": "https://github.com/Frontcore/frontcore-cli.git"
   },
   "keywords": [
     "frontcore",
@@ -24,9 +24,9 @@
   "author": "Ashwin Hegde",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hegdeashwin/frontcore-cli/issues"
+    "url": "https://github.com/Frontcore/frontcore-cli/issues"
   },
-  "homepage": "https://github.com/hegdeashwin/frontcore-cli#readme",
+  "homepage": "https://github.com/Frontcore/frontcore-cli#readme",
   "dependencies": {
     "chalk": "^1.1.1",
     "inquirer": "^0.10.0",
