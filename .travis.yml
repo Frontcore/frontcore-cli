@@ -3,9 +3,4 @@ before_script:
 
 language: node_js
 node_js:
-    - "0.10"
-    - "0.12"
     - "4.0.0"
-    - "iojs-v2.3.4"
-    - "iojs-v3.0.0"
-    - "iojs-v3.3.1"
