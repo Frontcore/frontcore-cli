@@ -8,7 +8,7 @@
   },
   "main": "./src/index.js",
   "bin": {
-    "frontcore": "./lib/frontcore"
+    "frontcore": "./bin/frontcore"
   },
   "scripts": {
     "test": "grunt test"
