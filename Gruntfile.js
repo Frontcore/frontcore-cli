@@ -28,7 +28,7 @@
 			'jshint': {
 				all: [
 					'Gruntfile.js',
-					'lib/**/*.js',
+					'src/**/*.js',
 					'test/**/*.js'
 				],
 				options: {
@@ -45,7 +45,7 @@
 				},
 				src: [
 					'Gruntfile.js',
-					'lib/**/*.js',
+					'src/**/*.js',
 					'test/**/*.js'
 				]
 			},
