@@ -3,9 +3,9 @@
 
 	/**
 	 * Requires a frontcore-cli utility functions;
-	 * @requires fsops:../lib/fsops.js
+	 * @requires fsops:../src/fsops.js
 	 */
-	var fsops = require('../lib/fsops.js');
+	var fsops = require('../src/fsops.js');
 
 	/**
 	 * Expected JSON objects;

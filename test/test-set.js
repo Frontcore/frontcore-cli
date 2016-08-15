@@ -3,9 +3,9 @@
 
 	/**
 	 * Requires a frontcore-cli utility functions;
-	 * @requires set:../lib/set.js
+	 * @requires set:../src/set.js
 	 */
-	var set = require('../lib/set.js');
+	var set = require('../src/set.js');
 
 	/**
 	 * Expected JSON objects;
