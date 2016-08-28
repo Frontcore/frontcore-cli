@@ -4,8 +4,8 @@
 	/**
 	 * Requires a in-built utility functions;
 	 */
-	var path = require('path'),
-		os = require('os');
+	var path = require('path');
+	var	os = require('os');
 
 	/**
 	 * Requires a constants utility functions;
@@ -18,10 +18,10 @@
 	 * @requires prompt:./lib/prompt.js
 	 * @requires send:./lib/send.js
 	 */
-	var msg = require('./message'),
-		check = require('./validate'),
-		prompt = require('./prompt'),
-		send = require('./send');
+	var msg = require('./message');
+	var	check = require('./validate');
+	var	prompt = require('./prompt');
+	var	send = require('./send');
 
 	/**
 	 * Main frontcore-cli function; check arguments and redirects

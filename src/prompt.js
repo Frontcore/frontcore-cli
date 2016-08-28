@@ -63,6 +63,16 @@
 				return val;
 			}
 		}, {
+			type: 'input',
+			name: 'description',
+			message: 'What is your project description?',
+			filterr: function(val) {
+				if(val === '') {
+					return 'N/A';
+				}
+				return val;
+			}
+		}, {
 			type: 'checkbox',
 			name: "languages",
 			message: 'On what all you want to perform analysis? (default: All)',
@@ -95,13 +105,6 @@
 				set.CSSDir(answers);
 				set.JSDir(answers);
 			}
-
-			/**
-			 * Adds default frontcore server address and port
-			 */
-			answers.service = {};
-			answers.service.address = "localhost";
-			answers.service.port = "9000";
 
 			answers.project = {};
 			answers.project.location = options.projPath;
