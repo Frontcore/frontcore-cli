@@ -44,7 +44,7 @@
 
 		this.prompt([{
 			type: 'input',
-			name: 'projectname',
+			name: 'name',
 			message: 'What is your project name? (default: Current directory name)',
 			filter: function(val) {
 				if (val === '') {
@@ -106,8 +106,7 @@
 				set.JSDir(answers);
 			}
 
-			answers.project = {};
-			answers.project.location = options.projPath;
+			answers.location = options.projPath;
 
 			if (fsops.writeJSONFile(answers, options.projPath + '/frontcore.json')) {
 				msg.info('\n\tConfiguration file got created : frontcore.json\n');
