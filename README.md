@@ -1,4 +1,4 @@
-# frontcore-cli [![GitHub version](http://img.shields.io/badge/version-0.1.2-brightgreen.svg)](https://github.com/hegdeashwin/frontcore-cli/releases)
+# frontcore-cli [![GitHub version](http://img.shields.io/badge/version-0.0.9-brightgreen.svg)](https://github.com/hegdeashwin/frontcore-cli/releases)
 
 [![Build Status](https://travis-ci.org/Frontcore/frontcore-cli.svg?branch=master)](https://travis-ci.org/Frontcore/frontcore-cli)  [![Dependency Status](https://gemnasium.com/hegdeashwin/frontcore-cli.svg)](https://gemnasium.com/hegdeashwin/frontcore-cli)  [![Node.js version](http://img.shields.io/badge/Node.js-%3E%206.0.0-brightgreen.svg)](https://github.com/hegdeashwin/frontcore-cli/)  [![Built with Grunt](http://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)  [![License version](http://img.shields.io/badge/License-MIT-red.svg)](https://github.com/hegdeashwin/frontcore-cli#license)
 
