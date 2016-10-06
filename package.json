@@ -12,7 +12,7 @@
   },
   "scripts": {
     "test": "grunt test",
-    "check": "./node_modules/bin/nsp check"
+    "nspcheck": "nsp check"
   },
   "repository": {
     "type": "git",
