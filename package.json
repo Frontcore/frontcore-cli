@@ -11,7 +11,8 @@
     "frontcore": "./bin/frontcore"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "check": "./node_modules/bin/nsp check"
   },
   "repository": {
     "type": "git",
@@ -40,6 +41,7 @@
     "grunt-jscs": "^3.0.1",
     "grunt-jsonlint": "^1.1.0",
     "grunt-travis-lint": "0.0.3",
+    "nsp": "^2.6.2",
     "sinon": "^1.16.1"
   },
   "engines": {
