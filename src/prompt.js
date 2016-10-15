@@ -18,9 +18,9 @@
 	 * @requires msg:./lib/message.js
 	 * @requires send:./lib/send.js
 	 */
-	var set = require('./set'),
-		fsops = require('./fsops'),
-		msg = require('./message');
+	var set = require('./set');
+	var	fsops = require('./fsops');
+	var msg = require('./message');
 
 	/**
 	 * Execute inquirer prompt
@@ -42,13 +42,34 @@
 
 		options = (options) ? options : {};
 
+		var _PWD = process.env.PWD;
+		var _assumedProjName = path.basename(_PWD);
+
+		/**
+		 * Check if package.json file exist on root directory
+		 */
+		if (!fsops.isFileExist(path.join(_PWD, 'package.json'))) {
+			console.log('\n package.json does not exist on root directory.');
+
+			/**
+			 * If package.json not found the check if bower.json file exist on root directory
+			 */
+			if (!fsops.isFileExist(path.join(_PWD, 'bower.json'))) {
+				console.log('\n bower.json does not exist on root directory.\n');
+			} else {
+				_assumedProjName = fsops.getNameFromBower(path.join(_PWD, 'bower.json'));
+			}
+		} else {
+			_assumedProjName = fsops.getNameFromPackage(path.join(_PWD, 'package.json'));
+		}
+
 		this.prompt([{
 			type: 'input',
 			name: 'name',
-			message: 'What is your project name? (default: Current directory name)',
+			message: `What is your project name? (default: ${_assumedProjName})`,
 			filter: function(val) {
 				if (val === '') {
-					val = path.basename(process.env.PWD);
+					val = path.basename(_PWD);
 				}
 				return val;
 			}
