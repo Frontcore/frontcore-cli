@@ -93,12 +93,12 @@
 					if (!isExit) {
 						msg.info([
 							'\n Welcome to ' + PRODUCT.name + ' v' + PRODUCT.version,
-							'',
-							' This utility will ask you bunch of questions to create a frontcore.json configuration file.',
+							'\n This utility will ask you bunch of questions to create a frontcore.json configuration file.',
 							' It only covers the most common items, and tries to guess sensible defaults.',
-							'',
-							' For more info visit ' + PRODUCT.repository.url,
-							' Press `' + ((isDarwin) ? 'CMD+C' : 'Ctrl+C') + '` at any time to quit.\n'
+							'\n For more info visit ' + PRODUCT.repository.url,
+							' Press `' + ((isDarwin) ? 'CMD+C' : 'Ctrl+C') + '` at any time to quit.\n',
+							'\n By default, for the project name frontcore-cli will look for name in `package.json` or `bower.json`',
+							' If non of those files are there on root of project directory then it will look for current directory name.'
 						].join('\n'));
 
 						prompt.init(options);

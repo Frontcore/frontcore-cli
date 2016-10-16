@@ -18,19 +18,9 @@
 	 * @requires msg:./lib/message.js
 	 * @requires send:./lib/send.js
 	 */
-	var set = require('./set'),
-		fsops = require('./fsops'),
-		msg = require('./message');
-
-	/**
-	 * Execute inquirer prompt
-	 * @access private
-	 * @param {object} questionsStack - array of questions with respected types
-	 * @param {function} callback - callback function gets executed once interactive is completed
-	 */
-	exports.prompt = function(questionsStack, callback) {
-		inquirer.prompt(questionsStack, callback);
-	};
+	var set = require('./set');
+	var	fsops = require('./fsops');
+	var msg = require('./message');
 
 	/**
 	 * Initialize inquirer prompt
@@ -42,13 +32,36 @@
 
 		options = (options) ? options : {};
 
-		this.prompt([{
+		var _PWD = process.env.PWD;
+		var _assumedProjName = path.basename(_PWD);
+
+		/**
+		 * Check if package.json file exist on root directory
+		 */
+		if (!fsops.isFileExist(path.join(_PWD, 'package.json'))) {
+			console.log('\n package.json does not exist on root directory.');
+
+			/**
+			 * If package.json not found the check if bower.json file exist on root directory
+			 */
+			if (!fsops.isFileExist(path.join(_PWD, 'bower.json'))) {
+				console.log('\n bower.json does not exist on root directory.\n');
+			} else {
+				console.log('\n bower.json found on root directory.');
+				_assumedProjName = fsops.getNameFromBower(path.join(_PWD, 'bower.json'));
+			}
+		} else {
+			console.log('\n package.json found on root directory.');
+			_assumedProjName = fsops.getNameFromPackage(path.join(_PWD, 'package.json'));;
+		}
+
+		inquirer.prompt([{
 			type: 'input',
 			name: 'name',
-			message: 'What is your project name? (default: Current directory name)',
+			message: `What is your project name? (default: ${_assumedProjName})`,
 			filter: function(val) {
 				if (val === '') {
-					val = path.basename(process.env.PWD);
+					val = _assumedProjName;
 				}
 				return val;
 			}
@@ -77,15 +90,15 @@
 			name: "languages",
 			message: 'On what all you want to perform analysis? (default: All)',
 			choices: [
-				'HTML',
-				'CSS',
 				'JavaScript'
 			]
-		}], function(answers) {
+		}]).then(function(answers) {
 			answers.directory = {};
 
 			if (answers.languages.length) {
 				for (var i = 0; i < answers.languages.length; i++) {
+
+					/* Not support yet
 					if (answers.languages[i] === 'HTML') {
 						set.HTMLDir(answers);
 					}
@@ -93,16 +106,19 @@
 					if (answers.languages[i] === 'CSS') {
 						set.CSSDir(answers);
 					}
+					*/
 
 					if (answers.languages[i] === 'JavaScript') {
 						set.JSDir(answers);
 					}
 				}
 			} else {
-				answers.languages = ['HTML', 'CSS', 'JavaScript'];
+				answers.languages = ['JavaScript'];
 
+				/* Not support yet
 				set.HTMLDir(answers);
 				set.CSSDir(answers);
+				*/
 				set.JSDir(answers);
 			}
 
