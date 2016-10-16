@@ -52,13 +52,13 @@
 			}
 		} else {
 			console.log('\n package.json found on root directory.');
-			_assumedProjName = fsops.getNameFromPackage(path.join(_PWD, 'package.json'));;
+			_assumedProjName = fsops.getNameFromPackage(path.join(_PWD, 'package.json'));
 		}
 
 		inquirer.prompt([{
 			type: 'input',
 			name: 'name',
-			message: `What is your project name? (default: ${_assumedProjName})`,
+			message: 'What is your project name? (default: ' + _assumedProjName + ')',
 			filter: function(val) {
 				if (val === '') {
 					val = _assumedProjName;
@@ -80,7 +80,7 @@
 			name: 'description',
 			message: 'What is your project description?',
 			filterr: function(val) {
-				if(val === '') {
+				if (val === '') {
 					return 'N/A';
 				}
 				return val;
