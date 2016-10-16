@@ -23,16 +23,6 @@
 	var msg = require('./message');
 
 	/**
-	 * Execute inquirer prompt
-	 * @access private
-	 * @param {object} questionsStack - array of questions with respected types
-	 * @param {function} callback - callback function gets executed once interactive is completed
-	 */
-	exports.prompt = function(questionsStack, callback) {
-		inquirer.prompt(questionsStack, callback);
-	};
-
-	/**
 	 * Initialize inquirer prompt
 	 * @module ./lib/prompt.js
 	 * @access public
@@ -57,19 +47,21 @@
 			if (!fsops.isFileExist(path.join(_PWD, 'bower.json'))) {
 				console.log('\n bower.json does not exist on root directory.\n');
 			} else {
+				console.log('\n bower.json found on root directory.');
 				_assumedProjName = fsops.getNameFromBower(path.join(_PWD, 'bower.json'));
 			}
 		} else {
-			_assumedProjName = fsops.getNameFromPackage(path.join(_PWD, 'package.json'));
+			console.log('\n package.json found on root directory.');
+			_assumedProjName = fsops.getNameFromPackage(path.join(_PWD, 'package.json'));;
 		}
 
-		this.prompt([{
+		inquirer.prompt([{
 			type: 'input',
 			name: 'name',
 			message: `What is your project name? (default: ${_assumedProjName})`,
 			filter: function(val) {
 				if (val === '') {
-					val = path.basename(_PWD);
+					val = _assumedProjName;
 				}
 				return val;
 			}
@@ -100,7 +92,7 @@
 			choices: [
 				'JavaScript'
 			]
-		}], function(answers) {
+		}]).then(function(answers) {
 			answers.directory = {};
 
 			if (answers.languages.length) {

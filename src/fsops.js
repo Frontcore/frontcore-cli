@@ -33,7 +33,7 @@
 	 * @param {string} file - location of the project path where frontcore.json file will get created with name of the file.
 	 */
 	exports.getNameFromPackage = function(file) {
-		var _requireFile = readFileSync(file);
+		var _requireFile = jsonfile.readFileSync(file);
 		return _requireFile.name;
 	};
 
@@ -44,7 +44,7 @@
 	 * @param {string} file - location of the project path where frontcore.json file will get created with name of the file.
 	 */
 	exports.getNameFromBower = function(file) {
-		var _requireFile = readFileSync(file);
+		var _requireFile = jsonfile.readFileSync(file);
 		return _requireFile.name;
 	};
 
@@ -55,17 +55,16 @@
 	 * @param {string} file - location of the project path where frontcore.json file will get created with name of the file.
 	 */
 	exports.isFileExist = function(file) {
-		fs.open(file, 'r', function(error, fd) {
-			if (error) {
-				if (error.code === 'ENOENT') {
-					return false;
-				} else {
-					throw error;
-				}
+		try {
+			fs.openSync(file, 'r');
+			return true;
+		} catch(error) {
+			if (error.code === 'ENOENT') {
+				return false;
 			} else {
-				return true;
+				throw error;
 			}
-		});
+		}
 	};
 
 })();
