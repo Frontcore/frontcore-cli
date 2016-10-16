@@ -98,8 +98,6 @@
 			name: "languages",
 			message: 'On what all you want to perform analysis? (default: All)',
 			choices: [
-				'HTML',
-				'CSS',
 				'JavaScript'
 			]
 		}], function(answers) {
@@ -107,6 +105,8 @@
 
 			if (answers.languages.length) {
 				for (var i = 0; i < answers.languages.length; i++) {
+
+					/* Not support yet
 					if (answers.languages[i] === 'HTML') {
 						set.HTMLDir(answers);
 					}
@@ -114,16 +114,19 @@
 					if (answers.languages[i] === 'CSS') {
 						set.CSSDir(answers);
 					}
+					*/
 
 					if (answers.languages[i] === 'JavaScript') {
 						set.JSDir(answers);
 					}
 				}
 			} else {
-				answers.languages = ['HTML', 'CSS', 'JavaScript'];
+				answers.languages = ['JavaScript'];
 
+				/* Not support yet
 				set.HTMLDir(answers);
 				set.CSSDir(answers);
+				*/
 				set.JSDir(answers);
 			}
 
