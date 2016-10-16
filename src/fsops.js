@@ -4,7 +4,6 @@
 	/**
 	 * Requires a in-built utility functions;
 	 */
-	var path = require('path');
 	var fs = require('fs');
 
 	/**
@@ -58,7 +57,7 @@
 		try {
 			fs.openSync(file, 'r');
 			return true;
-		} catch(error) {
+		} catch (error) {
 			if (error.code === 'ENOENT') {
 				return false;
 			} else {
