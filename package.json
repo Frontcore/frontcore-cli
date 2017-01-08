@@ -12,7 +12,9 @@
   },
   "scripts": {
     "test": "grunt test",
-    "nspcheck": "nsp check"
+    "nspcheck": "nsp check",
+    "lint": "eslint src test",
+    "lint:fix": "eslint --fix src test"
   },
   "repository": {
     "type": "git",
@@ -30,15 +32,14 @@
   "homepage": "https://github.com/Frontcore/frontcore-cli#readme",
   "dependencies": {
     "chalk": "^1.1.3",
+    "eslint": "^3.13.0",
     "inquirer": "^1.2.2",
     "jsonfile": "^2.3.0",
     "socket.io-client": "^1.4.5"
   },
   "devDependencies": {
     "grunt": "^1.0.1",
-    "grunt-contrib-jshint": "^1.0.0",
     "grunt-contrib-nodeunit": "^1.0.0",
-    "grunt-jscs": "^3.0.1",
     "grunt-jsonlint": "^1.1.0",
     "grunt-travis-lint": "0.0.3",
     "nsp": "^2.6.2",
