@@ -11,4 +11,4 @@ frontcore-cli is an open source CLI tool for [frontcore](https://github.com/hegd
 
 The MIT License (MIT)
 
-Copyright (c) 2016 Ashwin Hegde
+Copyright (c) 2017 Ashwin Hegde
