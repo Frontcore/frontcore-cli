@@ -4,12 +4,12 @@
 	/**
 	 * Requires a in-built utility functions;
 	 */
-	var fs = require('fs');
+	const fs = require('fs');
 
 	/**
 	 * Requires a 3rd party utility functions;
 	 */
-	var jsonfile = require('jsonfile');
+	const jsonfile = require('jsonfile');
 
 	/**
 	 * Write JS object to JSON file
@@ -32,7 +32,7 @@
 	 * @param {string} file - location of the project path where frontcore.json file will get created with name of the file.
 	 */
 	exports.getNameFromPackage = function(file) {
-		var _requireFile = jsonfile.readFileSync(file);
+		const _requireFile = jsonfile.readFileSync(file);
 		return _requireFile.name;
 	};
 
@@ -43,7 +43,7 @@
 	 * @param {string} file - location of the project path where frontcore.json file will get created with name of the file.
 	 */
 	exports.getNameFromBower = function(file) {
-		var _requireFile = jsonfile.readFileSync(file);
+		const _requireFile = jsonfile.readFileSync(file);
 		return _requireFile.name;
 	};
 

@@ -4,7 +4,7 @@
 	/**
 	 * Requires a in-built utility functions;
 	 */
-	var fs = require('fs');
+	const fs = require('fs');
 
 	/**
 	 * Check if the project path exist
@@ -23,7 +23,7 @@
 	 * @param {string} projPath - location of the project path where frontcore.json file will get created.
 	 */
 	exports.isDir = function(projPath) {
-		var stats = fs.statSync(projPath);
+		const stats = fs.statSync(projPath);
 		return stats.isDirectory();
 	};
 
@@ -34,7 +34,7 @@
 	 * @param {string} projPath - location of the project path where frontcore.json file will get created.
 	 */
 	exports.isFile = function(projPath) {
-		var stats = fs.statSync(projPath);
+		const stats = fs.statSync(projPath);
 		return stats.isFile();
 	};
 
@@ -46,7 +46,7 @@
 	 * @param {string} option - option
 	 */
 	exports.isCmdMapped = function(cmd, option) {
-		var isMapped = false;
+		let isMapped = false;
 
 		switch (cmd) {
 			case 'init':

@@ -4,12 +4,12 @@
 	/**
 	 * Requires a in-built utility functions;
 	 */
-	var path = require('path');
+	const path = require('path');
 
 	/**
 	 * Requires a 3rd party utility functions;
 	 */
-	var inquirer = require('inquirer');
+	const inquirer = require('inquirer');
 
 	/**
 	 * Requires a frontcore-cli utility functions;
@@ -18,9 +18,9 @@
 	 * @requires msg:./lib/message.js
 	 * @requires send:./lib/send.js
 	 */
-	var set = require('./set');
-	var	fsops = require('./fsops');
-	var msg = require('./message');
+	const set = require('./set');
+	const	fsops = require('./fsops');
+	const msg = require('./message');
 
 	/**
 	 * Initialize inquirer prompt
@@ -32,8 +32,8 @@
 
 		options = (options) ? options : {};
 
-		var _PWD = process.env.PWD;
-		var _assumedProjName = path.basename(_PWD);
+		const _PWD = process.env.PWD;
+		let _assumedProjName = path.basename(_PWD);
 
 		/**
 		 * Check if package.json file exist on root directory
@@ -96,7 +96,7 @@
 			answers.directory = {};
 
 			if (answers.languages.length) {
-				for (var i = 0; i < answers.languages.length; i++) {
+				for (let i = 0; i < answers.languages.length; i++) {
 
 					/* Not support yet
 					if (answers.languages[i] === 'HTML') {

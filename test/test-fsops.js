@@ -5,12 +5,12 @@
 	 * Requires a frontcore-cli utility functions;
 	 * @requires fsops:../src/fsops.js
 	 */
-	var fsops = require('../src/fsops.js');
+	const fsops = require('../src/fsops.js');
 
 	/**
 	 * Expected JSON objects;
 	 */
-	var config_projectname = require('./expected/projectname.json'),
+	const config_projectname = require('./expected/projectname.json'),
 		config_language = require('./expected/language.json'),
 		config_directories = require('./expected/directories.json');
 

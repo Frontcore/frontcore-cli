@@ -5,12 +5,12 @@
 	 * Requires a frontcore-cli utility functions;
 	 * @requires set:../src/set.js
 	 */
-	var set = require('../src/set.js');
+	const set = require('../src/set.js');
 
 	/**
 	 * Expected JSON objects;
 	 */
-	var hasHTMLDir = require('./expected/hasHTMLDir.json'),
+	const hasHTMLDir = require('./expected/hasHTMLDir.json'),
 		hasCSSDir = require('./expected/hasCSSDir.json'),
 		hasJSDir = require('./expected/hasJSDir.json'),
 		hasNoDir = require('./expected/hasNoDir.json');
