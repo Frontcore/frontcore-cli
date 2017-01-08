@@ -4,13 +4,13 @@
 	/**
 	 * Requires a in-built utility functions;
 	 */
-	var path = require('path');
-	var	os = require('os');
+	const path = require('path');
+	const	os = require('os');
 
 	/**
 	 * Requires a constants utility functions;
 	 */
-	var PRODUCT = require('../package.json');
+	const PRODUCT = require('../package.json');
 
 	/**
 	 * Requires a frontcore-cli utility functions;
@@ -18,10 +18,10 @@
 	 * @requires prompt:./lib/prompt.js
 	 * @requires send:./lib/send.js
 	 */
-	var msg = require('./message');
-	var	check = require('./validate');
-	var	prompt = require('./prompt');
-	var	send = require('./send');
+	const msg = require('./message');
+	const	check = require('./validate');
+	const	prompt = require('./prompt');
+	const	send = require('./send');
 
 	/**
 	 * Main frontcore-cli function; check arguments and redirects
@@ -31,11 +31,11 @@
 	 */
 	module.exports = function(options) {
 
-		var isExit = false,
-			isDarwin = true,
-			usercmd = (process.argv[2]) ? process.argv[2].toLowerCase() : false,
-			useropt = (process.argv[3]) ? process.argv[3].toLowerCase() : false,
-			cmdopt = (process.argv[4]) ? process.argv[4].toLowerCase() : false;
+		let isExit = false;
+		let isDarwin = true;
+		const usercmd = (process.argv[2]) ? process.argv[2].toLowerCase() : false;
+		const useropt = (process.argv[3]) ? process.argv[3].toLowerCase() : false;
+		const cmdopt = (process.argv[4]) ? process.argv[4].toLowerCase() : false;
 
 		options = (options) ? options : {};
 

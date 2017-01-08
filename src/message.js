@@ -4,12 +4,12 @@
 	/**
 	 * Requires a constants utility functions;
 	 */
-	var PRODUCT = require('../package.json');
+	const PRODUCT = require('../package.json');
 
 	/**
 	 * Requires a 3rd party utility functions;
 	 */
-	var chalk = require('chalk');
+	const chalk = require('chalk');
 
 	/**
 	 * Display error message on console in red color.
@@ -64,8 +64,8 @@
 	 * @module ./lib/message.js
 	 * @access private
 	 */
-	var _concat = function(char, len, callback) {
-		var out = ' ',
+	let _concat = function(char, len, callback) {
+		let out = ' ',
 			i = 0;
 
 		while (i < len) {
@@ -87,7 +87,7 @@
 		char = (char) ? char : '-';
 		len = (len) ? len : 50;
 
-		var self = this;
+		let self = this;
 
 		_concat(char, len, function(out) {
 			self.info(out);

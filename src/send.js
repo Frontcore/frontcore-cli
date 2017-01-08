@@ -4,25 +4,25 @@
 	/**
 	 * Requires a in-built utility functions;
 	 */
-	var os = require('os');
+	const os = require('os');
 
 	/**
 	 * Requires a 3rd party utility functions;
 	 */
-	var io = require('socket.io-client');
+	const io = require('socket.io-client');
 
 	/**
 	 * Requires a constants utility functions;
 	 */
-	var PRODUCT = require('../package.json');
+	const PRODUCT = require('../package.json');
 
 	/**
 	 * Requires a frontcore-cli utility functions;
 	 * @requires msg:./lib/message.js
 	 */
-	var msg = require('./message');
+	const msg = require('./message');
 
-	var isDarwin = true;
+	let isDarwin = true;
 	if (os.type().toLowerCase() === 'linux' || os.type().toLowerCase() === 'Windows_NT') {
 		isDarwin = false;
 	}
@@ -34,8 +34,8 @@
 	 * @param {string} projPath - location of the project path where frontcore.json file will get created.
 	 */
 	exports.config = function(projPath) {
-		var conf = require(projPath);
-		var socket = io.connect('http://' + conf.service.address + ':' + conf.service.port, {
+		let conf = require(projPath);
+		let socket = io.connect('http://' + conf.service.address + ':' + conf.service.port, {
 			'reconnectionAttempts': 3
 		});
 

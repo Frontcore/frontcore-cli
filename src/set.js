@@ -7,7 +7,7 @@
 	 * @param {object} obj - answer object generated with inquirer prompt
 	 * @param {string} key - key that need to be checked
 	 */
-	var _hasKey = function(obj, key) {
+	let _hasKey = function(obj, key) {
 		if (obj.hasOwnProperty(key)) {
 			return true;
 		}
